@@ -1,0 +1,112 @@
+.container {
+  width: 65%;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 36px;
+}
+
+.spinner {
+  color: #6f4ffb;
+  margin-top: 35px;
+  width: 3rem;
+  height: 3rem;
+}
+
+.alarm {
+  margin-top: 36px;
+}
+
+.item-container {
+  margin-top: 36px;
+}
+
+.single-item {
+  margin-bottom: 10px;
+}
+
+.ticker-container {
+  padding: 1px;
+  padding-top: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: left;
+  background-color: rgb(243, 243, 243);
+  border: 1px solid rgb(184, 182, 182);
+}
+
+.ticker-name {
+  margin-left: 12px;
+}
+
+.company-name {
+  color: grey;
+  font-size: 1.3em;
+  margin-left: 8px;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgb(184, 182, 182);
+  border-top: none;
+  border-bottom: none;
+  font-family: Courier;
+  font-size: 1.2em;
+}
+
+.col {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-change {
+  color: black;
+}
+
+.decrease,
+.down-arrow {
+  color: red;
+}
+
+.increase,
+.up-arrow {
+  color: green;
+}
+
+.up-arrow,
+.down-arrow {
+  margin-right: 5px;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid rgb(184, 182, 182);
+}
+
+.blue {
+  background-color: rgb(17, 126, 189);
+  border-color: rgb(17, 126, 189);
+  margin-right: 15px;
+  color: white;
+}
+
+.red {
+  background-color: rgb(241, 33, 33);
+  border-color: rgb(241, 33, 33);
+  margin-right: 10px;
+  color: white;
+}

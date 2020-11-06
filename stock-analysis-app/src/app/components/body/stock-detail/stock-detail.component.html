@@ -1,0 +1,109 @@
+<div class="container" (window:beforeunload)="updateLocalStorage()">
+    <div class="flash">
+        <flash-messages></flash-messages>
+    </div>
+
+    <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-border spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div *ngIf="error" class="error alert alert-danger d-flex justify-content-center">
+        No results found. Please enter valid Ticker
+    </div>
+
+    <div *ngIf="!error&&!loading" class="info-container">
+        <div class="basic-info">
+            <div class="star-wrapper">
+                <span class="ticker">{{ ticker.toUpperCase() }}</span> 
+                <span>
+                    <i *ngIf="!star" (click)="toggleStar()" class="fa fa-star-o star"></i>
+                    <i *ngIf="star" (click)="toggleStar()" class="fa fa-star star full-star"></i>
+                </span>
+            </div>
+            <p class="company-name">{{ stockInfo.name }}</p>
+            <p class="code">{{ stockInfo.exchangeCode }}</p>
+        </div>
+
+        <div *ngIf="pricesError" class="error alert alert-danger d-flex justify-content-center">
+            No current price found for {{ ticker }}
+        </div>
+
+        <div *ngIf="!pricesError && change > 0" class="price-info price-info-green">
+            <p class="last-price">{{ lastPrice.toFixed(2) }}</p>
+            <div class="change-wrapper">
+                <span><i class="fa fa-caret-up"></i></span> &nbsp;
+                <span>{{ change.toFixed(2) }}</span> 
+                (<span>{{ changePercent.toFixed(2) }}%</span>)
+            </div>
+            <p class="cur-time">{{ curTime }}</p>
+        </div>
+
+        <div *ngIf="!pricesError && change < 0" class="price-info price-info-red">
+            <p class="last-price">{{ lastPrice.toFixed(2) }}</p>
+            <div class="change-wrapper">
+                <span><i class="fa fa-caret-down"></i></span> &nbsp;
+                <span>{{ change.toFixed(2) }}</span> 
+                (<span>{{ changePercent.toFixed(2) }}%</span>)
+            </div>
+            <p class="cur-time">{{ curTime }}</p>
+        </div>
+
+        <div *ngIf="!pricesError && change === 0" class="price-info price-info-black">
+            <p class="last-price">{{ lastPrice.toFixed(2) }}</p>
+            <div class="change-wrapper">
+                <span>{{ change.toFixed(2) }}</span> 
+                (<span>{{ changePercent.toFixed(2) }}%</span>)
+            </div>
+            <p class="cur-time">{{ curTime }}</p>
+        </div>
+    </div>
+
+    <div *ngIf="!error&&!loading">
+        <button 
+            type="button" 
+            class="btn btn-success buy-button" 
+            (click)="openBuyModal()"
+        >Buy</button>
+        <div *ngIf="!marketClose" class="market-status market-open">Market is Open</div>
+        <div *ngIf="marketClose" class="market-status market-close">Market Closed on {{ closeTime }}</div>
+    </div>
+
+    <mat-tab-group *ngIf="!error&&!loading" mat-stretch-tabs class="tab-container">
+        <mat-tab class="tab" label="Summary">
+            <app-summary 
+                [stockInfo]="stockInfo" 
+                [prices]="prices" 
+                [marketClose]="marketClose"
+                [chartData]="chartData"
+                [chartError]="chartError"
+                [change]="change">
+            </app-summary>
+        </mat-tab>
+        <mat-tab label="Top News">
+            <div *ngIf="newsError">
+                No news found.
+            </div>
+            <div *ngIf="!newsError" class="row">
+                <div col-2 col-sm-2 col-md-2 col-lg-2 *ngFor="let new of news" class="news-container">
+                    <app-news (clicked)="openNewsContentModal($event)" [news]="new"></app-news>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab label="Charts">
+            <ng-template matTabContent>
+                <div *ngIf="twoYearsChartError">
+                    Cannot display chart, no historical data found.
+                </div>
+                <highcharts-chart
+                    *ngIf="!twoYearsChartError"
+                    class="chart"
+                    [Highcharts]="Highcharts" 
+                    [constructorType]="'stockChart'" 
+                    [options]="twoYearsChartsOptions">
+                </highcharts-chart>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>

@@ -1,0 +1,35 @@
+<div>
+    <div class="modal-header">
+        <h4 class="modal-title" ngbAutofocus>{{ source }} <br> <span>{{ publishedAt }}</span></h4>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button> <br>
+        
+    </div>
+    <div class="modal-body">
+        <span class="title">{{ title }}</span> <br>
+        <span class="desc">{{ description }}</span> <br>
+        <span class="link">For more details click</span> <a target="_blank" rel="noopener noreferrer" href="{{ url }}">here</a>
+
+        <div class="share-container">
+            <p>Share</p>
+            <a class="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text={{ title }}&url={{ url }}"
+                target="_blank" 
+                rel="noopener noreferrer"
+            ><i class="fa fa-twitter fa-3x"></i></a>
+            
+            <span
+                class="fb-share-button fb" 
+                data-layout="button_count" 
+                data-size="small"
+            >
+                <a 
+                    target="_blank" 
+                    href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" 
+                    class="fb-xfbml-parse-ignore"
+                ><i class="fa fa-facebook-square fa-3x"></i></a>
+            </span>
+        </div>
+    </div>
+</div>

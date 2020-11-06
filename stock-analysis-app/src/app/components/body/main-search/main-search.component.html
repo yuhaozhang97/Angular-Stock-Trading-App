@@ -1,0 +1,33 @@
+<div>
+    <div>
+        <h1>STOCK SEARCH</h1>
+        <div class="inner-addon right-addon">
+            <a href="/details/{{label}}"><i class="fa fa-search"></i></a>
+            <input 
+                type="text" 
+                matInput 
+                [(ngModel)]="label" 
+                (input)="getOptions($event.target.value)" 
+                class="form-control" 
+                placeholder="Enter stock name" 
+                [matAutocomplete]="auto"
+            />
+            
+            <mat-autocomplete
+                #auto="matAutocomplete" 
+                [panelWidth]="180" 
+                (optionSelected)="keepTickerOnly()"
+            >
+                <mat-option *ngIf="loading">
+                    <mat-spinner diameter="25"></mat-spinner>
+                </mat-option>
+
+                <mat-field *ngIf="!loading">
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{ option }}
+                    </mat-option>
+                </mat-field>
+            </mat-autocomplete>
+        </div>
+    </div>
+</div>

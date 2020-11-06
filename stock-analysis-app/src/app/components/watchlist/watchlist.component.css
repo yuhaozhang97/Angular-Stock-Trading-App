@@ -1,0 +1,70 @@
+.container {
+  width: 75%;
+  min-height: 100vh;
+}
+
+h1 {
+  margin-top: 36px;
+}
+
+.spinner {
+  color: #6f4ffb;
+  margin-top: 35px;
+  width: 3rem;
+  height: 3rem;
+}
+
+.alarm {
+  margin-top: 36px;
+}
+
+.item-container {
+  margin-top: 36px;
+}
+
+.ticker-container {
+  margin-top: 25px;
+}
+
+.single-item {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  padding: 0 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.company-name {
+  color: grey;
+  font-size: 1.3em;
+}
+
+.price-info {
+  text-align: right;
+  font-size: 1.3em;
+}
+
+.price-info-green {
+  color: green;
+}
+
+.price-info-red {
+  color: red;
+}
+
+.price-info-black {
+  color: black;
+}
+
+.change-wrapper {
+  margin-top: 6px;
+}
+
+.close {
+  color: gray !important;
+  cursor: pointer;
+  z-index: 1;
+}

@@ -1,0 +1,8 @@
+.quantity {
+  margin-left: 6px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}

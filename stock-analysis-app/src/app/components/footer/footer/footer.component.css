@@ -1,0 +1,9 @@
+p {
+  text-align: center;
+  padding-top: 12px;
+  margin-bottom: -15px;
+  height: 45px;
+  background-color: lightgrey;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

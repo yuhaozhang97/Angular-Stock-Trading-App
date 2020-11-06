@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <span class="navbar-brand mb-0 h1">Stock Search</span>
+    
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <div *ngIf="router.url === '/'">
+                <a class="nav-link focus-style" href="/">Search</a>
+              </div>
+              <div *ngIf="router.url != '/'">
+                <a class="nav-link" href="/">Search</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div *ngIf="router.url === '/watchlist'">
+                <a class="nav-link focus-style" href="/watchlist">Watchlist</a>
+              </div>
+              <div *ngIf="router.url != '/watchlist'">
+                <a class="nav-link" href="/watchlist">Watchlist</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <div *ngIf="router.url === '/portfolio'">
+                <a class="nav-link focus-style" href="/portfolio">Portfolio</a>
+              </div>
+              <div *ngIf="router.url != '/portfolio'">
+                <a class="nav-link" href="/portfolio">Portfolio</a>
+              </div>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,59 @@
+div {
+  min-height: 100vh;
+}
+
+i {
+  cursor: pointer;
+}
+
+h1 {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+}
+
+.inner-addon {
+  position: relative;
+  width: 240px;
+  margin: 0 auto;
+  padding-top: 35px;
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding: 10px;
+  color: #6f4ffb;
+}
+
+/* align icon */
+.right-addon .fa {
+  right: 15px;
+}
+
+/* add padding  */
+.right-addon input {
+  padding-right: 30px;
+  border-radius: 30px;
+  border: 2px solid #6f4ffb;
+}
+
+::ng-deep .mat-autocomplete-panel {
+  margin-left: 20px;
+  margin-top: -5px;
+  -moz-box-shadow: 5px 5px 5px 6px #ccc;
+  box-shadow: 5px 5px 5px 6px #ccc;
+  z-index: 1;
+  background-color: white;
+}
+
+::ng-deep .mat-option:hover:not(.mat-option-disabled) {
+  background: lightgray !important;
+}

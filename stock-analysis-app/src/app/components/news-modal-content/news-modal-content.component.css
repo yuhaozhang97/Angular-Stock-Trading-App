@@ -1,0 +1,36 @@
+h4 span {
+  font-weight: medium !important;
+  font-size: medium !important;
+  margin-top: -6px;
+  color: grey;
+}
+
+.title {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.desc {
+  font-size: small;
+}
+
+.link {
+  font-size: smaller;
+  font-weight: lighter;
+}
+
+a {
+  font-size: smaller;
+  margin-left: 2px;
+}
+
+.share-container {
+  margin-top: 50px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.fb {
+  margin-left: 5px;
+}

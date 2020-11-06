@@ -1,0 +1,114 @@
+.container {
+  min-height: 100vh;
+}
+
+.flash {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.spinner {
+  color: #6f4ffb;
+  margin-top: 35px;
+  width: 3rem;
+  height: 3rem;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.error {
+  top: 50px;
+}
+
+.ticker,
+.last-price {
+  font-size: 39px;
+}
+
+.star {
+  font-size: x-large;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.full-star {
+  color: yellow;
+}
+
+.company-name {
+  font-size: 26px;
+  color: rgb(100, 98, 98);
+  margin-top: -12px;
+}
+
+.change-wrapper {
+  font-size: 26px;
+  margin-top: -28px;
+}
+
+.code {
+  margin-top: -5px;
+  font-size: 13px;
+}
+
+.cur-time {
+  font-size: 13px;
+  margin-top: 9px;
+  color: black !important;
+}
+
+.price-info {
+  text-align: right;
+}
+
+.price-info-green {
+  color: green;
+}
+
+.price-info-red {
+  color: red;
+}
+
+.price-info-black {
+  color: black;
+}
+
+.buy-button {
+  margin-top: -10px;
+}
+
+.market-status {
+  font-size: 14px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 16px;
+}
+
+.market-open {
+  background-color: rgb(168, 241, 168);
+}
+
+.market-close {
+  background-color: rgb(241, 136, 136);
+}
+
+::ng-deep .mat-tab-labels {
+  justify-content: space-between;
+}
+
+.tab-container {
+  margin-top: 20px;
+}
+
+.news-container {
+  margin-top: 30px;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  margin-bottom: 100px;
+}

@@ -1,0 +1,56 @@
+<div class="container">
+    <h1>My Watchlist</h1>
+    
+    <div *ngIf="loading" class="d-flex justify-content-center">
+        <div class="spinner-border spinner" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+    <div *ngIf="!loading && (!watchlist || watchlist.length === 0)" 
+        class="alarm alert alert-warning d-flex justify-content-center">
+        Currently you don't have any stock in your watchlist.
+    </div>
+
+    <div *ngIf="!loading && watchlist.length > 0" class="item-container">
+        <div *ngFor="let item of watchlist">
+            <div class="single-item" (click)="goToDetail(item.ticker)">
+                <div class="ticker-container">
+                    <h2>{{ item.ticker }}</h2>
+                    <p class="company-name">{{ item.name }}</p>
+                </div>
+
+                <div *ngIf="item.change > 0" class="price-info price-info-green">
+                    <span aria-hidden="true" id="button-delete" class="close" (click)="onDelete(item.ticker);$event.stopPropagation()">&times;</span> <br>
+                    <span class="last-price">{{ item.lastPrice.toFixed(2) }}</span> <br>
+                    <div class="change-wrapper">
+                        <span><i class="fa fa-caret-up"></i></span> &nbsp;
+                        <span>{{ item.change.toFixed(2) }}</span> 
+                        (<span>{{ item.changePercent.toFixed(2) }}%</span>)
+                    </div>
+                </div>
+        
+                <div *ngIf="item.change < 0" class="price-info price-info-red">
+                    <span aria-hidden="true" class="close" (click)="onDelete(item.ticker);$event.stopPropagation()">&times;</span> <br>
+                    <span class="last-price">{{ item.lastPrice.toFixed(2) }}</span> <br>
+                    <div class="change-wrapper">
+                        <span><i class="fa fa-caret-down"></i></span> &nbsp;
+                        <span>{{ item.change.toFixed(2) }}</span> 
+                        (<span>{{ item.changePercent.toFixed(2) }}%</span>)
+                    </div>
+                </div>
+        
+                <div *ngIf="item.change === 0" class="price-info price-info-black">
+                    <span aria-hidden="true" class="close" (click)="onDelete(item.ticker);$event.stopPropagation()">&times;</span> <br>
+                    <span class="last-price">{{ item.lastPrice.toFixed(2) }}</span> <br>
+                    <div class="change-wrapper">
+                        <span><i class="fa fa-caret-down"></i></span> &nbsp;
+                        <span>{{ item.change.toFixed(2) }}</span> 
+                        (<span>{{ item.changePercent.toFixed(2) }}%</span>)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

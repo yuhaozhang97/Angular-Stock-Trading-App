@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 0.9em;
+}
+
+.desc-container {
+  margin-top: 40px;
+}
+
+.stats-container {
+  display: flex;
+  font-size: 0.9em;
+}
+
+.fst-col {
+  margin-left: 62px;
+}
+
+.snd-col {
+  margin-left: 100px;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.description h5 {
+  text-align: center;
+}
+
+.chart {
+  margin-left: 50px;
+}

@@ -1,0 +1,23 @@
+<div>
+    <div class="modal-header">
+        <h6 class="modal-title">{{ ticker }}</h6>
+        <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button> <br>
+    </div>
+
+    <div class="modal-body">
+        <p>Current Price: {{ curPrice }}<p>
+        <span>Quantity</span> <input ngbAutofocus type="number" class="quantity" [(ngModel)]="quantity"/>
+    </div>
+
+    <div class="modal-footer footer">
+        <span>Total: {{ (curPrice * quantity).toFixed(2) }}</span>
+        <button 
+            type="button" 
+            class="btn btn-success buy-button"
+            [disabled]="quantity <= 0"
+            (click)="updatePortfolio()"
+        >Buy</button>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="desc-container">
+        <div class="stats-container">
+            <div class="fst-col">
+                <span>High Price: {{ prices.high }}</span><br>
+                <span>Low Price: {{ prices.low }}</span><br>
+                <span>Open Price: {{ prices.open }}</span><br>
+                <span>Prev. Close: {{ prices.prevClose }}</span><br>
+                <span>Volume: {{ prices.volume }}</span><br>
+            </div>
+            <div *ngIf="!marketClose" class="snd-col">
+                <span>Mid Price: {{ prices.mid }}</span><br>
+                <span>Ask Price: {{ prices.askPrice }}</span><br>
+                <span>Ask Size: {{ prices.askSize }}</span><br>
+                <span>Bid Price: {{ prices.bidPrice }}</span><br>
+                <span>Bid Size: {{ prices.bidSize }}</span><br>
+            </div>
+        </div>
+
+        <div class="description">
+            <h5>Company's Description</h5>
+            <p>Start Date: {{ stockInfo.startDate }}</p>
+            <p>{{ stockInfo.description }}</p>
+        </div>
+    </div>
+
+    <div class="chart">
+        <div *ngIf="chartError" class="error alert alert-danger d-flex justify-content-center">
+            Cannot display chart, no data found
+        </div>
+        <highcharts-chart
+            *ngIf="!chartError"
+            [Highcharts]="Highcharts" 
+            [constructorType]="'stockChart'" 
+            [options]="chartOptions">
+        </highcharts-chart>
+    </div>
+</div>

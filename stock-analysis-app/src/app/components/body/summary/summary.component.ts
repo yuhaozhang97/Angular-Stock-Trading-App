@@ -55,6 +55,7 @@ export class SummaryComponent implements OnInit {
       series: [
         {
           type: 'line',
+          name: this.stockInfo.ticker.toUpperCase(),
           pointInterval: 24 * 3600 * 1000,
           data: prices
         }

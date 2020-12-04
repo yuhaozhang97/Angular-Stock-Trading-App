@@ -1,4 +1,4 @@
-# Angular-Stock-Trading-App
+# Angular Stock Trading Web App
 * Easily look up stock information
 * Keep track of stock being traded
 

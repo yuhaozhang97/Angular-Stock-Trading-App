@@ -1,5 +1,5 @@
 const axios = require('axios');
-const API_KEY = '07e77e74fdeee3bdc52bb686cbf38fbe3e5aa0cc'
+const API_KEY = $API_KEY
 
 const getStockInfo = async (req, res) => {
     const TiingoURL = 'https://api.tiingo.com/tiingo/daily'
